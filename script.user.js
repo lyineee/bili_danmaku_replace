@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         bili danmaku replace
-// @namespace    http://tampermonkey.net/
+// @name         bilibili视频弹幕替换
+// @namespace    https://github.com/lyineee/bili_danmaku_replace
 // @version      1.0
-// @description  replace bilibili danmaku
+// @description  RT，使用本地的xml弹幕文件替换掉bilibili视频的弹幕
 // @author       You
 // @match        https://www.bilibili.com/video/*
 // @require      https://unpkg.com/ajax-hook@2.0.3/dist/ajaxhook.min.js
