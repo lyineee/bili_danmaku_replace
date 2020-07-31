@@ -83,17 +83,14 @@
             var videoState = /api\.bilibili\.com\/x\/web-interface\/archive\/stat/
             var pageList = /api\.bilibili\.com\/x\/player\/pagelist/
             if (reDataProtobuf.test(response.config.url)) {
-                console.log('match the danmaku!');
                 if(danmaku){
                     response.response = danmaku;
                     danmaku = undefined;
                 }
             }
             if (pageList.test(response.config.url)) {
-                console.log('match the video info');
                 var pageListData = JSON.parse(response.response);
                 videoInfo = pageListData.data
-                console.log(videoInfo)
             }
             handler.next(response)
         }
