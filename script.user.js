@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         bilibili视频弹幕替换
 // @namespace    https://github.com/lyineee/bili_danmaku_replace
-// @version      1.0
-// @description  RT，使用本地的xml弹幕文件替换掉bilibili视频的弹幕
-// @author       You
+// @version      1.0.1
+// @description  RT，使用本地的xml弹幕文件替换掉bilibili视频的弹幕(其实不是替换是添加ヾ(≧▽≦*)o
+// @author       lyineee
 // @match        https://www.bilibili.com/video/*
 // @require      https://unpkg.com/ajax-hook@2.0.3/dist/ajaxhook.min.js
 // @require      https://cdn.jsdelivr.net/npm/protobufjs@6.10.1/dist/protobuf.min.js
@@ -30,7 +30,7 @@
     function input_danmaku() {
         input_tag.files[0].text().then(function (i) { dmEncode(i) });
         var urlArgs = window.location.search
-        var page = /p=(\d+)/.exec(urlArgs)[1];
+        var page = /p=(\d+)/.exec(urlArgs)==null?1:/p=(\d+)/.exec(urlArgs)[1];
         var reloadData = {
             autoplay: false,
             cid: videoInfo[page-1].cid,
